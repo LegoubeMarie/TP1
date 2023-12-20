@@ -61,6 +61,7 @@ namespace Tavern.AIModule
                     leaves.Add(node);
                     continue;
                 }
+                
 
                 List<IAction> remaining_actions = new(actions);
                 remaining_actions.Remove(action);
@@ -119,7 +120,11 @@ namespace Tavern.AIModule
                 Debug.Log("No plan found");
                 return null;
             }
-
+            if (isLeaf)
+                {
+                    leaves.Add(node);
+                    continue;
+                }
             IAction nextAction = planned_actions[0];
             planned_actions.RemoveAt(0);
             Debug.Log("A plan has been found, I know what to do");
