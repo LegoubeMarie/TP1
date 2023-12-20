@@ -98,6 +98,7 @@ namespace Tavern.AIModule
         public void Clear()
         {
             planned_actions.Clear();
+            Debug.Log("All is clear now");
         }
 
 
@@ -121,6 +122,7 @@ namespace Tavern.AIModule
 
             IAction nextAction = planned_actions[0];
             planned_actions.RemoveAt(0);
+            Debug.Log("A plan has been found, I know what to do");
             return nextAction;
         }
     }
